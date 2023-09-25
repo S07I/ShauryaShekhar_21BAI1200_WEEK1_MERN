@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS_Task2</title>
+  <style>
+    /* Styles for screens smaller than 768px (e.g., mobile phones) */
+@media (max-width: 768px) {
+    /* Your responsive CSS rules go here */
+    .container {
+        max-width: 100%; /* Expand container to full width */
+    }
+}
+
+  </style>
+  <script>
+    function sortStringAlphabetically() {
+      // Get the input string from the user
+      const inputString = document.getElementById('inputString').value;
+
+      // Convert the string to an array of characters, sort them, and join them back
+      const sortedString = inputString.split('').sort().join('');
+
+      // Display the sorted string in the output element
+      document.getElementById('output').textContent = sortedString;
+    }
+  </script>
+</head>
+<body>
+  <h1>Alphabetical Order</h1>
+  <p>Enter a string:</p>
+  <input type="text" id="inputString">
+  <button onclick="sortStringAlphabetically()">Sort</button>
+  <p>Sorted String: <span id="output"></span></p>
+</body>
+</html>

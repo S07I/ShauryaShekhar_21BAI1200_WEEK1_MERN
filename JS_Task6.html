@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS_TASK6</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">    <style>
+        body {
+            background-color: #fafafa;
+        }
+        .container {
+            max-width: 350px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(245, 243, 243);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 100px;
+            height: 70%;
+        }
+        .form-group {
+            margin-bottom: 25px;
+           
+        }
+        .btn{
+            margin-top: 50px;
+            padding-top: 10px;
+
+        }
+        /* Styles for screens smaller than 768px (e.g., mobile phones) */
+@media (max-width: 768px) {
+    /* Your responsive CSS rules go here */
+    .container {
+        max-width: 100%; /* Expand container to full width */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="font-family:Proxima Nova;font-style: italic;">Instagram Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+            
+            <div class="col-md-19 inputGroupContainer !important">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="name" placeholder="Username" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    
+                    <div class="col-md-19 inputGroupContainer !important">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input name="password" placeholder="Password" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+            <button type="button" class="btn btn-primary btn-block" id="loginBtn">Log In</button>
+        </form>
+        
+        <p class="btn"><input type="checkbox" ><label style="margin-left: 10px;">Remember me</label> <a style="padding-left: 50px;" href="#">Forgot Password?</a></p>
+    </div>
+    <p style="text-align: center;">Don't have an account!<a href="#">Sign up here</a></p>
+    <script>
+        document.getElementById("loginBtn").addEventListener("click", function() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // You can add your authentication logic here to check username and password
+            // For this example, we're just displaying a message
+            if (username === "example" && password === "password") {
+                alert("Login successful!");
+            } else {
+                alert("Incorrect username or password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

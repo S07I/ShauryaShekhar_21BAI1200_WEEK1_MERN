@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS_Task5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style>
+         .error-message {
+            color: red;
+        }
+
+        /* Add CSS styles to make error labels red */
+        .error-label {
+            color: red;
+        }
+       /* Styles for screens smaller than 768px (e.g., mobile phones) */
+@media (max-width: 768px) {
+    /* Your responsive CSS rules go here */
+    .container {
+        max-width: 100%; /* Expand container to full width */
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container" style="width: 50%; margin-top: 3%;">
+
+        <form class="well form-horizontal" action="" method="post" id="contact_form">
+            <fieldset>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name</label>
+                    <div class="col-md-7 inputGroupContainer !important">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="first_name" id="first_name" placeholder="First Name" class="form-control"
+                                type="text">
+                        </div>
+                        <span id="first_name_error" class="error-message"></span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Last Name</label>
+                    <div class="col-md-7 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="last_name" id="last_name" placeholder="Last Name" class="form-control"
+                                type="text">
+                        </div>
+                        <span id="last_name_error" class="error-message"></span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">E-Mail</label>
+                    <div class="col-md-7 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="email" id="email" placeholder="E-Mail Address" class="form-control"
+                                type="text">
+                        </div>
+                        <span id="email_error" class="error-message"></span>
+                    </div>
+                </div>
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"> Phone#</label>
+                    <div class="col-md-7 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="contact_no" id="contact_no" placeholder="(845)555-1212"
+                                class="form-control" type="text">
+                        </div>
+                        <span id="contact_no_error" class="error-message"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"> Address</label>
+                    <div class="col-md-7 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="Address" id="Address" placeholder="Address" class="form-control"
+                                type="text">
+                        </div>
+                        <span id="Address_error" class="error-message"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"> City</label>
+                    <div class="col-md-7 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="City" id="City" placeholder="City" class="form-control" type="text">
+                        </div>
+                        <span id="City_error" class="error-message"></span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">State</label>
+                    <div class="col-md-7 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select name="State" class="form-control selectpicker">
+                                <optgroup>
+                                    <option value="">Please select your state</option>
+                                    <option>Madhya Pradesh</option>
+                                    <option>Bihar</option>
+                                    <option>Maharashtra</option>
+                                    <option>Tamil Nadu</option>
+                                    <option>West Bengal</option>
+                                    <option>Gujarat</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <span id="State_error" class="error-message"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Do you have hosting?</label>
+                    <div class="col-md-7 inputGroupContainer">
+                        <div class="input-group">
+                            <tr>
+                                <td><input type="radio"> <label>Yes</label></td>
+                                <br>
+                                <td><input type="radio"> <label>No</label></td>
+                            </tr>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"> Project Description</label>
+                    <div class="col-md-7 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <input name="Project" id="Project" placeholder="" class="form-control" type="text"
+                                style="height: 90px;">
+                        </div>
+                        <span id="Project_error" class="error-message"></span>
+                    </div>
+                </div>
+
+                <!-- Error messages container -->
+                <div id="error_messages" class="col-md-offset-4 col-md-7"></div>
+
+                <!-- Button-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-7"><br>
+                        <button type="submit" class="btn btn-warning">Send <span
+                                class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+<script>
+document.getElementById("contact_form").addEventListener("submit", function (event) {
+    var firstName = document.getElementById("first_name").value.trim();
+    var lastName = document.getElementById("last_name").value.trim();
+    var city = document.getElementById("City").value.trim();
+    var address = document.getElementById("Address").value.trim();
+    var phone = document.getElementById("contact_no").value.trim();
+    var email = document.getElementById("email").value.trim();
+
+    var errorMessages = [];
+
+    if (firstName === "") {
+        errorMessages.push("Please supply your first name");
+        document.getElementById("first_name_error").textContent = "*Please supply your first name";
+        document.getElementById("first_name").style.borderColor = "red";
+    } else {
+        document.getElementById("first_name_error").textContent = "";
+        document.getElementById("first_name").style.borderColor = "";
+    }
+
+    if (lastName === "") {
+        errorMessages.push("Please supply your last name");
+        document.getElementById("last_name_error").textContent = "*Please supply your last name";
+        document.getElementById("last_name").style.borderColor = "red";
+    } else {
+        document.getElementById("last_name_error").textContent = "";
+        document.getElementById("last_name").style.borderColor = "";
+    }
+
+    if (city === "") {
+        errorMessages.push("Please supply your city");
+        document.getElementById("City_error").textContent = "*Please supply your city";
+        document.getElementById("City").style.borderColor = "red";
+    } else {
+        document.getElementById("City_error").textContent = "";
+        document.getElementById("City").style.borderColor = "";
+    }
+
+    if (address === "") {
+        errorMessages.push("Please supply your street address");
+        document.getElementById("Address_error").textContent = "*Please supply your street address";
+        document.getElementById("Address").style.borderColor = "red";
+    } else {
+        document.getElementById("Address_error").textContent = "";
+        document.getElementById("Address").style.borderColor = "";
+    }
+
+    if (phone === "") {
+        errorMessages.push("Please supply your phone number");
+        document.getElementById("contact_no_error").textContent = "*Please supply your phone number";
+        document.getElementById("contact_no").style.borderColor = "red";
+        
+    } else {
+        document.getElementById("contact_no_error").textContent = "";
+        document.getElementById("contact_no").style.borderColor = "";
+    }
+
+    if (email === "") {
+        errorMessages.push("Please supply your email address");
+        document.getElementById("email_error").textContent = "*Please supply your email address";
+        document.getElementById("email").style.borderColor = "red";
+
+    } else {
+        document.getElementById("email_error").textContent = "";
+        document.getElementById("email").style.borderColor = "";
+    }
+
+    if (errorMessages.length > 0) {
+        event.preventDefault(); // Prevent form submission
+        var errorMessageContainer = document.getElementById("error_messages");
+        // errorMessageContainer.innerHTML = errorMessages.join("<br>");
+         errorMessageContainer.style.color = "red";
+    }
+});
+</script>
+
+</html>

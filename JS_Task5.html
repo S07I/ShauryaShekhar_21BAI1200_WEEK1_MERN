@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS_Task5</title>
+    <style>
+        .initial {
+            border: 1px solid red;
+        }
+
+        .error {
+            color: red;
+        }
+        
+        input.success, textarea.success {
+            border: 1px solid black;
+        }
+        /* Styles for screens smaller than 768px (e.g., mobile phones) */
+@media (max-width: 768px) {
+    /* Your responsive CSS rules go here */
+    .container {
+        max-width: 100%; /* Expand container to full width */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <form id="contactForm" style="padding-top: 210px;padding-left: 480px;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="initial" style="margin-left: 30px;">
+        <span id="nameError" class="error">(This field is required)</span>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" class="initial" style="margin-left: 30px;">
+        <span id="emailError" class="error">(A valid email address is required)</span>
+        <br>
+        <br>
+
+        <label for="website">Website:</label>
+        <input type="text" id="website" name="website" class="initial"style="margin-left: 17px;">
+        <span id="websiteError" class="error">(A valid URL is required)</span>
+        <br><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" class="initial" style="margin-left: 13px;"></textarea>
+        <span id="messageError" class="error">(This field is required)</span>
+        <br>
+        <br>
+
+        <input type="submit"style="margin-left: 80px;" value="Submit">
+    </form>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const websiteInput = document.getElementById('website');
+        const messageInput = document.getElementById('message');
+
+        form.addEventListener('submit', function(event) {
+            let valid = true;
+
+            if (nameInput.value.trim() === '') {
+                valid = false;
+                nameInput.classList.add('error');
+            } else {
+                nameInput.classList.remove('error');
+                nameInput.classList.add('success');
+                document.getElementById('nameError').style.color = 'black'; // Change error message color to black
+            }
+
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailRegex.test(emailInput.value)) {
+                valid = false;
+                emailInput.classList.add('error');
+            } else {
+                emailInput.classList.remove('error');
+                emailInput.classList.add('success');
+                document.getElementById('emailError').style.color = 'black'; // Change error message color to black
+            }
+
+            const urlRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}(\/\S*)?$/;
+            if (!urlRegex.test(websiteInput.value)) {
+                valid = false;
+                websiteInput.classList.add('error');
+            } else {
+                websiteInput.classList.remove('error');
+                websiteInput.classList.add('success');
+                document.getElementById('websiteError').style.color = 'black'; // Change error message color to black
+            }
+
+            if (messageInput.value.trim() === '') {
+                valid = false;
+                messageInput.classList.add('error');
+            } else {
+                messageInput.classList.remove('error');
+                messageInput.classList.add('success');
+                document.getElementById('messageError').style.color = 'black'; // Change error message color to black
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

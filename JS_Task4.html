@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS_Task4</title>
+  <style>
+    /* Styles for screens smaller than 768px (e.g., mobile phones) */
+@media (max-width: 768px) {
+    /* Your responsive CSS rules go here */
+    .container {
+        max-width: 100%; /* Expand container to full width */
+    }
+}
+
+  </style>
+  <script>
+    function showDate() {
+      const currentDate = new Date();
+      
+      // Get the day, month, and year components
+      const day = currentDate.getDate();
+      const month = currentDate.toLocaleString('en-US', { month: 'long' });
+      const year = currentDate.getFullYear();
+      
+      // Create the formatted date string
+      const formattedDate = `${day}/ ${month}/${year}`;
+      
+      // Display the formatted date
+      document.getElementById('dateDisplay').textContent = `${formattedDate}`;
+    }
+
+    function showTime() {
+      const currentTime = new Date();
+      const options = {
+        // year: 'numeric',
+        // month: 'short',
+        // day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        timeZoneName: 'short'
+      };
+      const timeOutput = currentTime.toLocaleString('en-US', options);
+      const currentDate = new Date();
+      const dateOutput = currentDate.toDateString();
+    //   document.getElementById('dateDisplay').textContent = ` ${dateOutput}`;
+      document.getElementById('timeDisplay').textContent = ` ${dateOutput} ${timeOutput} (India Standard Time)`;
+    }
+  </script>
+</head>
+<body>
+  <h1>Date and Time Display</h1>
+  <button onclick="showDate()">Show Date</button>
+  <p id="dateDisplay"></p>
+  <br>
+  <br>
+  <button onclick="showTime()">Show Time</button>
+  <p id="timeDisplay"></p>
+</body>
+</html>

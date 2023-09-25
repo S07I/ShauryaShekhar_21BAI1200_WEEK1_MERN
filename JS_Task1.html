@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS_Task1</title>
+  <style>
+    /* Styles for screens smaller than 768px (e.g., mobile phones) */
+@media (max-width: 768px) {
+    /* Your responsive CSS rules go here */
+    .container {
+        max-width: 100%; /* Expand container to full width */
+    }
+}
+
+  </style>
+</head>
+<body>
+  <h1>Reverse a Number</h1>
+  <p>Enter a number to reverse:</p>
+  <input type="text" id="numberInput">
+  <button onclick="reverseAndDisplay()">Reverse</button>
+  <p>Reversed Number: <span id="result"></span></p>
+
+  <script>
+    function reverseNumber(x) {
+      // Convert the number to a string
+      const str = x.toString();
+
+      // Reverse the string
+      const reversedStr = str.split('').reverse().join('');
+
+      // Convert the reversed string back to a number
+      const reversedNum = parseInt(reversedStr, 10);
+
+      return reversedNum;
+    }
+
+    function reverseAndDisplay() {
+      const inputElement = document.getElementById('numberInput');
+      const resultElement = document.getElementById('result');
+
+      // Get the input value
+      const inputValue = inputElement.value;
+
+      // Check if the input is a valid number
+      if (!isNaN(inputValue)) {
+        // Reverse the number and display the result
+        const reversed = reverseNumber(Number(inputValue));
+        resultElement.textContent = reversed;
+      } else {
+        resultElement.textContent = 'Invalid input. Please enter a number.';
+      }
+    }
+  </script>
+</body>
+</html>

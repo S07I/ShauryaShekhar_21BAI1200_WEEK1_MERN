@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BS_Task6</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            margin-top: 90px;
+            
+        }
+        .card{
+            background-color: azure;
+        }
+        /* Styles for screens smaller than 768px (e.g., mobile phones) */
+@media (max-width: 768px) {
+    /* Your responsive CSS rules go here */
+    .container {
+        max-width: 100%; /* Expand container to full width */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container" style="width: 30%;">
+        <div class="card">
+            <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+                <span class="text-danger"><small>*Name is required</small></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+                <span class="text-danger"><small>*Email is required</small></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+                <span class="text-danger"><small>*Password is required</small></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="hobbies">Hobbies</label>
+                <select class="form-control" id="hobbies" name="hobbies">
+                    <option value="reading"></option>
+                    <option value="reading">Reading</option>
+                    <option value="cooking">Cooking</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="traveling">Traveling</option>
+                    <option value="sports">Sports</option>
+                </select>
+            </div>
+            
+            <button style="width: 100%;" type="submit" class="btn btn-danger">Submit</button>
+        </form>
+    </div>
+</div>
+</div>
+    <script>
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+
+        nameInput.addEventListener('input', function () {
+            if (this.value.trim() !== '') {
+                this.nextElementSibling.style.display = 'none';
+            }
+        });
+
+        emailInput.addEventListener('input', function () {
+            if (this.value.trim() !== '') {
+                this.nextElementSibling.style.display = 'none';
+            }
+        });
+
+        passwordInput.addEventListener('input', function () {
+            if (this.value.trim() !== '') {
+                this.nextElementSibling.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
